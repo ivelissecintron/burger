@@ -1,19 +1,75 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
+body {
+  width: 75%;
+  margin: 0 auto; 
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url("burger.jpeg");
+}
+
+img #burgerimage {
+  display: block;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 65px;
+  margin: 50px;
+}
+
+.burgermenu {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #b7ffc2;
+  border: none;
+}
+
+.burgerdevoured {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+  background-color: grey;
+}
+
+h2 {
+  text-align: right;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 40px;
+  margin: 50px;
+}
+
+.formContainer {
+  background-color: grey;
+}
+
+.addBurgerButton {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: grey;
+  border: none;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 40px;
+  margin: 50px;
+}
