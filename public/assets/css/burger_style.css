@@ -4,12 +4,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url("burger.jpeg");
-}
-
-img #burgerimage {
-  display: block;
-  margin: auto;
 }
 
 h1 {
@@ -19,11 +13,25 @@ h1 {
   margin: 50px;
 }
 
+h2 {
+  text-align: right;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 40px;
+  margin: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 40px;
+  margin: 50px;
+}
+
 .burgermenu {
   font-family: 'Luckiest Guy', cursive;
   font-weight: normal;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   border-radius: 25px;
   width: 100%;
   margin: 10px;
@@ -36,25 +44,14 @@ h1 {
   font-family: 'Luckiest Guy', cursive;
   font-weight: normal;
   font-size: 20px;
-  text-align: center;
+  text-align: right;
   border-radius: 25px;
   margin: 10px;
   padding: 10px;
   background-color: grey;
 }
 
-h2 {
-  text-align: right;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 40px;
-  margin: 50px;
-}
-
-.formContainer {
-  background-color: grey;
-}
-
-.addBurgerButton {
+.addburger {
   font-family: 'Luckiest Guy', cursive;
   font-weight: normal;
   font-size: 20px;
@@ -65,11 +62,4 @@ h2 {
   padding: 10px;
   background-color: grey;
   border: none;
-}
-
-h3 {
-  text-align: center;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 40px;
-  margin: 50px;
 }

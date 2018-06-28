@@ -5,13 +5,11 @@ var router = express.Router();
 //import the burger.js model to use its database functions
 var burger = require("../models/burger.js");
 
-// index route
 router.get('/', function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
     };
-    // console.log(hbsObject);
     res.render('index', hbsObject);
   });
 });
@@ -28,12 +26,18 @@ router.post('/burgers', function(req, res) {
 
 router.put('/burgers/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
-
   burger.updateOne({
     devoured: true
   }, condition, function(data) {
     res.redirect('/');
   });
+});
+
+router.delete('/burgers/:id', function (request, response) {
+    var condition = 'id = ' + request.params.id;
+    burger.deleteOne(condition, function (result) {
+        res.redirect('/');
+    });
 });
   
 // export routes for server.js to use.

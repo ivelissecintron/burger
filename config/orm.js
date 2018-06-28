@@ -5,10 +5,9 @@ var connection = require("../config/connection.js");
 function printQuestionMarks(num) {
   var arr = [];
 
-  for (var i = 0; i < num; i++) {
+	  for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
@@ -28,32 +27,31 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
-
-  // translate array of strings to a single comma-separated string
+  // change array of strings to a single comma-separated string
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+// object for SQL statement functions
 var orm = {
-	// Function that returns all table entries
+	// function that returns all table entries
 	selectAll: function(tableInput, cb) {
-		// Construct the query string that returns all rows from the target table
+		// construct the query string that returns all rows from the target table
 		var queryString = "SELECT * FROM " + tableInput + ";";
 
-		// Perform the database query
+		// perform the database query
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;
 			}
 
-			// Return results in callback
+			// return results in callback
 			cb(result);
 		});
 	},
 
-	// Function that insert a single table entry
+	// function that insert a single table entry
 	insertOne: function(table, cols, vals, cb) {
-		// Construct the query string that inserts a single row into the target table
+		// construct the query string that inserts a single row into the target table
 		var queryString = "INSERT INTO " + table;
 
 		queryString += " (";
@@ -63,20 +61,17 @@ var orm = {
 		queryString += printQuestionMarks(vals.length);
 		queryString += ") ";
 
-		// console.log(queryString);
-
-		// Perform the database query
+		// perform the database query
 		connection.query(queryString, vals, function(err, result) {
 			if (err) {
 				throw err;
 			}
-
-			// Return results in callback
+			// return results in callback
 			cb(result);
 		});
 	},
 
-	// Function that updates a single table entry
+	//function that updates a single table entry
 	updateOne: function(table, objColVals, condition, cb) {
 		// Construct the query string that updates a single entry in the target table
 		var queryString = "UPDATE " + table;
@@ -86,16 +81,27 @@ var orm = {
 		queryString += " WHERE ";
 		queryString += condition;
 
-		// console.log(queryString);
-
-		// Perform the database query
+		// perform the database query
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;
 			}
-
-			// Return results in callback
+			//return results in callback
 			cb(result);
+		});
+	},
+	
+	deleteOne: function(table, condition, cb) {
+		var queryString = "DELETE FROM " + table;
+		queryString += " WHERE ";
+		queryString += condition;
+		console.log(queryString);
+	
+		connection.query(queryString, function(err, result) {
+					if (err) {
+						throw err;
+					}
+					cb(result);
 		});
 	}
 };
